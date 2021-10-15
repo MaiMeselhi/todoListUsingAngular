@@ -8,6 +8,8 @@ import {Todo} from './../../models/todo'
 export class TodosComponent implements OnInit {
 title = "todos";
 todos : Todo[]
+inputTodo:string = "";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -25,5 +27,10 @@ todos : Todo[]
   deleteTodo (id:number) {
     this.todos = this.todos.filter((todo, i) => i !== id);
   }
-
+  addTodo () {
+    this.todos.push({
+      content: this.inputTodo,
+      completed: false
+    });
+}
 }
