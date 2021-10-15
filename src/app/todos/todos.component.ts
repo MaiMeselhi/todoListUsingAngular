@@ -19,17 +19,11 @@ todos : Todo[]
   toggleDone (id:number) {
     this.todos.map((todo, i) => {
       if (i == id)todo.completed = !todo.completed;
-
       return todo;
     })
   }
-
   deleteTodo (id:number) {
     this.todos = this.todos.filter((todo, i) => i !== id);
   }
-
-
-
-
 
 }
